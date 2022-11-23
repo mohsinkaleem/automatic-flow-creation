@@ -11,7 +11,7 @@ setup(
     author_email = 'mohsin.kaleem@walmart.com',
     long_description = open('README.md').read() + '\n\n' + open('CHANGELOG.md').read(),
     long_description_content_type = "text/markdown",
-    url='https://github.com/mohsinkaleem/automatic-flow-creation.git',
+    # url='https://github.com/mohsinkaleem/automatic-flow-creation.git',
     include_package_data=True,
     keywords = ['Algorithm', 'Partition', 'Array', 'Flow','Binary Search'],
 )
