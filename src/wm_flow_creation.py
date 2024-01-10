@@ -8,18 +8,25 @@ class partition_into_k_buckets:
 	categories(list) 		:	the index/mapper for each array element i.e records
 	k(int)			 		:	number of partition or buckets
 	n(int)			 		:	length of the array
-	cat2records_mapper(dict): 	one to one mapping with category list with records list     
+	cat2records_mapper(dict): 	one to one mapping with category list with records list  
+	   
     """
 
-	def __init__(self, array:list, categories:list, k:int):	
+	def __init__(self, array:list, categories:list, k:int,is_sort=True):
 		self.array=array
 		self.categories=categories
 		self.k=k
 		self.n=len(self.array)
 		self.cat2records_mapper = {cat:records for cat,records in zip(self.categories,self.array)}
+		if is_sort:
+			self.sort_the_records()
 
-		self.sort_the_records()
+	def dummy(self):
+		return True
 
+	def dummy2(self):
+		return False
+		
 	def sort_the_records(self):
 		'''
 		sort the array of records keeping its index i.e categories variable intact.
@@ -138,6 +145,7 @@ class partition_into_k_buckets:
 		    int : best bucket no.
 		'''
 		assert max_bucket_no<=self.n, 'maximum no of bucket is more than the size[array]'
+		assert min_bucket_no>=1, "minimum bucket size should be postive value"
 
 		min_val=float('inf')
 		best_k=1
@@ -151,3 +159,11 @@ class partition_into_k_buckets:
 
 		self.k=cache_k
 		return best_k
+	
+	def foobar(self,a):
+		if a==1:
+			return 1
+		elif a==0:
+			return 0
+		else:
+			return 2
